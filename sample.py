@@ -14,6 +14,4 @@ for file in file_list:
     # matchPathはリストで取得される
     print(matchPath[0])
 
-    os.remove(file)
-
-    # 作成途中 どうやら、MAX_PATHを超えているから、エラーが出る。
+    os.remove(matchPath[0])
