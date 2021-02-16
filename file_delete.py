@@ -24,7 +24,9 @@ file_list = [
 for file in file_list:
     with open("./log/{}.log".format(time), "a") as f:
         f.write(file + "\n")
-    matchPath = glob.glob("**/{}".format(file), recursive=True)
+    matchPath = glob.glob("D://**/{}".format(file), recursive=True)
+    # 同ディレクトリ配下を見る時は下記を利用
+    # matchPath = glob.glob("**/{}".format(file), recursive=True)
     # matchPathはリストで取得される
     if len(matchPath) == 0:
         not_file = "{}は見つかりませんでした。\n".format(file)
