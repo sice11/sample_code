@@ -8,10 +8,12 @@ Python 3.9.1<br>
 - mkdire.py<br>
   未作成のフォルダ階層とファイルを作成<br>
   編集箇所は、以下の変数とリスト
+  
   '''
   new_dir_path
   make_files
   '''
+  
 <br>
 
 - file_delete.py<br>
