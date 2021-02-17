@@ -24,16 +24,17 @@ file_list = [
 for file in file_list:
     with open("./log/{}.log".format(time), "a") as f:
         f.write(file + "\n")
-    matchPath = glob.glob("D://**/{}".format(file), recursive=True)
+    # matchPath = glob.glob("D://**/{}".format(file), recursive=True)
     # 同ディレクトリ配下を見る時は下記を利用
-    # matchPath = glob.glob("**/{}".format(file), recursive=True)
+    matchPath = glob.glob("**/{}".format(file), recursive=True)
     # matchPathはリストで取得される
     if len(matchPath) == 0:
         not_file = "{}は見つかりませんでした。\n".format(file)
         with open("./log/{}.log".format(time), "a") as f:
             f.write(not_file)
     else:
-        os.remove(matchPath[0])
-        delete_file = "delete>>" + matchPath[0] + "\n"
-        with open("./log/{}.log".format(time), "a") as f:
-            f.write(delete_file)
+        for i in range(len(matchPath)):
+            os.remove(matchPath[i])
+            delete_file = "delete>>" + matchPath[i] + "\n"
+            with open("./log/{}.log".format(time), "a") as f:
+                f.write(delete_file)
